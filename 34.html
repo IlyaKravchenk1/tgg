@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ4</title>
+</head>
+<body>
+    <script>
+        var number;
+var object = {};
+function splitNumber(number) {
+number = prompt('Введите любое число от 0 до 999 в трехзначном формате', '000');
+while (number == '' || isNaN(number)) {
+number = prompt('Введите любое число от 0 до 999 в трехзначном формате', '000');
+}
+if (number > 999) {
+document.getElementById('question-1').innerHTML = 'Число не может превышать значения 999!';
+console.log(object);
+} else {
+object = number.split();
+object.hundreds = number[0];
+object.dozens = number[1];
+object.units = number[2];
+document.getElementById('question-1').innerHTML = 'Число ' + object + ' включает в себя'
+
+- 'сотни', ' + object.hundreds + ';
+- 'десятки', '   + object.dozens + ';
+- 'единицы', ' + object.units + ';
+}
+}
+splitNumber(number);
+    </script>
+    <script>
+var firstRound = {
+question: 'Как называется приспособление для прицеливания у огнестрельного оружия?',
+answer1: '1. Ушко',
+answer2: '2. Мошка',
+answer3: '3. Риска',
+answer4: '4. Мушка',
+rightAnswerNumber: '4',
+rightAnswerFull: '4. Мушка',
+};
+var secondRound = {
+question: 'Какая самая длинная река на западном полушарии?',
+answer1: '1. Миссисипи',
+answer2: '2. Амазонка',
+answer3: '3. Колорадо',
+answer4: '4. Арканзас',
+rightAnswerNumber: '2',
+rightAnswerFull: '2. Амазонка',
+};
+var thirdRound = {
+question: 'Какой съедобный гриб существует?',
+answer1: '1. Мышка',
+answer2: '2. Зайчик',
+answer3: '3. Медведушка',
+answer4: '4. Лисичка',
+rightAnswerNumber: '4',
+rightAnswerFull: '4. Лисичка',
+};
+var forthRound = {
+question: 'С какого цвета начинается радуга?',
+answer1: '1. Зеленый',
+answer2: '2. Фиолетовый',
+answer3: '3. Красный',
+answer4: '4. Желтый',
+rightAnswerNumber: '3',
+rightAnswerFull: '3. Красный',
+};
+
+var rounds = [firstRound, secondRound, thirdRound, forthRound];
+
+function questMillion(object) {
+var countCorrect = 0;
+for (var i = 0; i < 4; i++){
+var userAnswer=+prompt(object[i].question + '\n' + object[i].answer1 + '\n' + object[i].answer2 + '\n' + object[i].answer3 + '\n' + object[i].answer4);
+while (userAnswer=='' || userAnswer==null || isNaN(userAnswer)) {
+userAnswer=+prompt(object[i].question + '\n' + object[i].answer1 + '\n' + object[i].answer2 + '\n' + object[i].answer3 + '\n' + object[i].answer4);
+}
+if ( userAnswer==object[i].rightAnswerNumber) {
+alert('Вы ответили верно!\n' + object[i].rightAnswerFull + '.' );
+countCorrect++;
+} else {
+alert('Вы дали неверный ответ!\nПравильный ответ: ' + object[i].rightAnswerFull + ' .');
+}
+}
+document.write('Вы дали верные ответы на следующее количество вопросов: ' + countCorrect + '.' ;
+}
+questMillion(rounds);
+</script>>
+    </script>
+</body>
+</html>
